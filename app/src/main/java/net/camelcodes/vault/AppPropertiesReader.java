@@ -13,8 +13,8 @@ public class AppPropertiesReader {
 
   private static Properties readPropertiesFile() {
     Properties prop = new Properties();
-    try (InputStream stream = AppPropertiesReader.class.getResourceAsStream(
-        "application.properties")) {
+    try (InputStream stream = ClassLoader.getSystemClassLoader()
+        .getResourceAsStream("application.properties")) {
       prop.load(stream);
       return prop;
     } catch (IOException e) {

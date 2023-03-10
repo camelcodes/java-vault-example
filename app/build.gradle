@@ -1,0 +1,20 @@
+plugins {
+    // Apply the application plugin to add support for building a CLI application in Java.
+    id 'application'
+}
+
+repositories {
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.bettercloud:vault-java-driver:5.1.0'
+    // Use JUnit test framework.
+    testImplementation 'junit:junit:4.13.2'
+}
+
+application {
+    // Define the main class for the application.
+    mainClass = 'net.camelcodes.vault.App'
+}
